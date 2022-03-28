@@ -26,7 +26,7 @@ describe("StakingToken", function () {
   beforeEach(async () => {
     const StakingToken = await hre.ethers.getContractFactory("StakingToken");
     const [owner] = await hre.ethers.getSigners();
-    stakingToken = await StakingToken.deploy(owner.address, manyTokens.toString());
+    stakingToken = await StakingToken.deploy(owner.address, manyTokens.toString(), "Pragma Staking Token", "TKN");
     await stakingToken.deployed();
   });
 

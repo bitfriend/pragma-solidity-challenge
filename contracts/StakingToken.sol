@@ -7,6 +7,10 @@ import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 contract StakingToken is ERC20, Ownable {
     using SafeMath for uint256;
 
+    string private _name;
+
+    string private _symbol;
+
     /**
      * @notice We usually require to know who are all the stakeholders.
      */
@@ -27,8 +31,24 @@ contract StakingToken is ERC20, Ownable {
      * @param _owner The address to receive all tokens on construction.
      * @param _supply The amount of tokens to mint on construction.
      */
-    constructor(address _owner, uint256 _supply) public {
+    constructor(address _owner, uint256 _supply, string memory __name, string memory __symbol) public {
         _mint(_owner, _supply);
+        _name = __name;
+        _symbol = __symbol;
+    }
+
+    /**
+     * @return the name of the token.
+     */
+    function name() public view returns (string memory) {
+        return _name;
+    }
+
+    /**
+     * @return the symbol of the token.
+     */
+    function symbol() public view returns (string memory) {
+        return _symbol;
     }
 
     // ---------- STAKES ----------
