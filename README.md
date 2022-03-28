@@ -1,3 +1,13 @@
+# Build & Test Guide
+
+Open this project with VS Code.
+
+Press `Ctrl`+`Shift`+`P` to launch `Solidity: Change workspace compiler version (Remote)` and select `0.5.2`.
+
+Run `yarn` in VS Code Terminal to fetch node modules.
+
+Run `yarn test` to execute the testing code.
+
 # Advanced Sample Hardhat Project
 
 This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
